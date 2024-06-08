@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+//@unique for unique
+//? after datatype to specify its optional
+//@default(auto()) to auto increment
+//@map to map _id from mongodb to our current id
+//@deafult(now()) to get the present time
+
+//After making changes in schema always run
+//npx prisma db push
+
+model User{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String @unique
+  username String @unique
+  password String 
+  avatar String?
+  createdAt DateTime @default(now())
+}

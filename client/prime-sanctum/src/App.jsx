@@ -3,11 +3,16 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
+import Navbar from "./components/navbar/Navbar.jsx"
+import "./layout.scss"
+
 function App() {
   //const [count, setCount] = useState(0)
 
   return (
-    <div><a href="/">hello world</a></div>
+    <div className="layout">
+     <Navbar/>
+    </div>
   )
 }
 

@@ -4,12 +4,10 @@ import "./navbar.scss"
 function Navbar(){
   return(
     <nav>
-    <div className="Left">
+    <div className="left">
       <a href="/" className="logo">
-
-      <img src="/logo.png" alt="" />
-      <span>PrimeSanctum</span>
-
+        <img src="/Logo.png" alt="" />
+        <span>PrimeSanctum</span>
       </a>
       <a href="/">Home</a>
       <a href="/">About</a>
@@ -22,7 +20,7 @@ function Navbar(){
     <div className="right">
       <a href="/">Sign in</a>
 
-      <a href="/">Sign up</a>
+      <a href="/" className="register">Sign up</a>
     </div>
     
     </nav>

@@ -2,10 +2,6 @@
 .searchBar{
     .type{
 
-        @include sm{
-            margin: 5px;
-        }
-
         button{
             padding: 16px 36px;
             border: 1px solid #999;
@@ -70,7 +66,8 @@
             }
 
             @include sm{
-                padding: 20px;;
+                padding: 20px;
+                border: 1px solid gray;
             }
         }
 

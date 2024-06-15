@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './slider.scss'
 
 function Slider({images}){
-    const[imageIndex,setImage] = useState(null);
+    const[imageIndex,setImageIndex] = useState(null);
 
     return(
         <div className="slider">

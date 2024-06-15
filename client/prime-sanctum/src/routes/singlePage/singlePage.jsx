@@ -1,6 +1,7 @@
 import Slider from '../../components/slider/slider'
 import './singlePage.scss'
 import { singlePostData, userData } from '../../lib/dummydata'
+import Map from '../../components/map/map'
 
 
 function SinglePage(){
@@ -31,7 +32,89 @@ function SinglePage(){
          </div>
       </div>
       <div className="features">
-         <div className="wrapper"></div>
+         <div className="wrapper">
+            <p className='title'>General</p>
+            <div className="listVertical">
+               <div className="feature">
+                  <img src="/utility.png" alt="" srcset="" />
+                  <div className="featureText">
+                     <span>Utilities</span>
+                     <p>Rental is responsible</p>
+                  </div>
+               </div>
+               <div className="feature">
+                  <img src="/pet.png" alt="" srcset="" />
+                  <div className="featureText">
+                     <span>Pet-policy</span>
+                     <p>Pets allowed</p>
+                  </div>
+               </div>
+               <div className="feature">
+                  <img src="/fee.png" alt="" srcset="" />
+                  <div className="featureText">
+                     <span>Property fees</span>
+                     <p>Must have 3x the house rent in total household</p>
+                  </div>
+               </div>
+            </div>
+            <p className='title'>Sizes</p>
+            <div className="sizes">
+               <div className="size">
+                  <img src="/size.png" alt="" srcset="" />
+                  <span>80 sqft</span>
+               </div>
+               <div className="size">
+                  <img src="/bed.png" alt="" srcset="" />
+                  <span>2</span>
+               </div>
+               <div className="size">
+                  <img src="/bath.png" alt="" srcset="" />
+                  <span>1</span>
+               </div>
+            </div>
+
+            <p className='title'>Nearby Places</p>
+            <div className="listHorizontal">
+                  <div className="feature">
+                  <img src="/school.png" alt="" srcset="" />
+                  <div className="featureText">
+                     <span>School</span>
+                     <p>250m away</p>
+                  </div>
+                  </div>
+
+                  <div className="feature">
+                  <img src="/bus.png" alt="" srcset="" />
+                  <div className="featureText">
+                     <span>Bus Stop</span>
+                     <p>100m away</p>
+                  </div>
+                  </div>
+
+                  <div className="feature">
+                  <img src="/bus.png" alt="" srcset="" />
+                  <div className="featureText">
+                     <span>Restaurent</span>
+                     <p>200m away</p>
+                  </div>
+                  </div>
+
+
+            </div>
+            <p className='title'>Location</p>
+            <div className="mapContainer"><Map items={[singlePostData]}/></div>
+            <div className="buttons">
+               <button>
+                  <img src="/chat.png" alt="" srcset="" />
+                  Send a message
+               </button>
+               <button>
+                  <img src="/save.png" alt="" srcset="" />
+                  Save the place
+               </button>
+            </div>
+            
+         </div>
       </div>
     </div>
    )

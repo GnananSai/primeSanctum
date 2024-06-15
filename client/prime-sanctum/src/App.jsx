@@ -14,6 +14,8 @@ import ListPage from "./routes/listPage/listPage.jsx";
 import Layout from "./routes/layout/layout.jsx";
 import Login from "./routes/login/login.jsx";
 import SinglePage from "./routes/singlePage/singlePage.jsx";
+import RegisterPage from "./routes/register/register.jsx";
+import PropertyForm from "./routes/post/post.jsx"
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -42,9 +44,20 @@ function App() {
         },
 
         {
+          path:"/register",
+          element:<RegisterPage/>
+          
+        },
+
+        {
           path:"/:id",
           element:<SinglePage/>
           
+        },
+
+        {
+          path:"/post",
+          element:<PropertyForm/>
         }
       ]
     }

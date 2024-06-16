@@ -15,6 +15,8 @@ import Layout from "./routes/layout/layout.jsx";
 import Login from "./routes/login/login.jsx";
 import SinglePage from "./routes/singlePage/singlePage.jsx";
 import ProfilePage from "./routes/profilePage/profilePage.jsx";
+import RegisterPage from "./routes/register/register.jsx";
+import PropertyForm from "./routes/post/post.jsx"
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -43,6 +45,12 @@ function App() {
         },
 
         {
+          path:"/register",
+          element:<RegisterPage/>
+          
+        },
+
+        {
           path:"/:id",
           element:<SinglePage/>
           
@@ -51,6 +59,8 @@ function App() {
         {
           path:"/profile",
           element:<ProfilePage/>
+          path:"/post",
+          element:<PropertyForm/>
         }
       ]
     }

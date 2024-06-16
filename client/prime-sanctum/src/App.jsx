@@ -14,6 +14,7 @@ import ListPage from "./routes/listPage/listPage.jsx";
 import Layout from "./routes/layout/layout.jsx";
 import Login from "./routes/login/login.jsx";
 import SinglePage from "./routes/singlePage/singlePage.jsx";
+import ProfilePage from "./routes/profilePage/profilePage.jsx";
 import RegisterPage from "./routes/register/register.jsx";
 import PropertyForm from "./routes/post/post.jsx"
 
@@ -56,6 +57,8 @@ function App() {
         },
 
         {
+          path:"/profile",
+          element:<ProfilePage/>
           path:"/post",
           element:<PropertyForm/>
         }

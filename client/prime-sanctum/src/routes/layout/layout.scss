@@ -1,6 +1,17 @@
 @import "../../responsive.scss";
 
+//THIS IS TO HIDE THE SCROLL BAR BUT KEEP THE FUNCTIONALITY
+
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
 .layout{
+
+
     height: 100vh;
     max-width: 1366px;
     margin-left: auto;

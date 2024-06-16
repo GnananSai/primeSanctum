@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../components/card/card';
 import Filter from '../../components/filter/Filter';
+import List from '../../components/list/list';
 import './listPage.scss';
 import Map from '../../components/map/map';
 
@@ -40,10 +41,8 @@ function ListPage() {
     <div className="listPage">
       <div className="listContainer">
         <div className="wrapper">
-          <Filter />
-            {data.map(item => (
-              <Card key={item.id} item={item} />
-            ))}
+            <Filter/>
+            <List/>
         </div>
       </div>
       <div className="mapContainer">

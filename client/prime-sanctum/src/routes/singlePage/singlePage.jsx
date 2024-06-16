@@ -65,11 +65,11 @@ function SinglePage(){
                </div>
                <div className="size">
                   <img src="/bed.png" alt="" srcset="" />
-                  <span>2</span>
+                  <span>2 beds</span>
                </div>
                <div className="size">
                   <img src="/bath.png" alt="" srcset="" />
-                  <span>1</span>
+                  <span>1 bathroom</span>
                </div>
             </div>
 

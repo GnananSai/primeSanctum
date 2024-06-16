@@ -175,3 +175,8 @@ def get_session_token(access_token: Optional[str] = Cookie(None)):
 @app.get('/protected/message')
 def get_message(access_token: str = Depends(get_session_token)):
     return {"Message": "Authenticated"}
+
+
+# if __name__ == '__main__':
+#     import uvicorn
+#     uvicorn.run(app, port=8000)

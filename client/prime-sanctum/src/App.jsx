@@ -15,6 +15,9 @@ import Layout from "./routes/layout/layout.jsx";
 import Login from "./routes/login/login.jsx";
 import SinglePage from "./routes/singlePage/singlePage.jsx";
 import ProfilePage from "./routes/profilePage/profilePage.jsx";
+import Register from "./routes/register/register.jsx";
+import NewPostPage from "./routes/newPostPage/newPostPage.jsx";
+import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -51,6 +54,21 @@ function App() {
         {
           path:"/profile",
           element:<ProfilePage/>
+        },
+
+        {
+          path:"/register",
+          element:<Register/>
+        },
+
+        {
+          path:"/newpost",
+          element:<NewPostPage/>
+        },
+
+        {
+          path:"update",
+          element: <ProfileUpdatePage/>
         }
       ]
     }

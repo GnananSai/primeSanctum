@@ -5,7 +5,7 @@ import { useState } from "react";
 function Navbar(){
   const [open,setOpen]=useState(false);
 
-  const user= true;
+  const user= false;
 
   return(
     <nav>
@@ -34,13 +34,12 @@ function Navbar(){
           </Link>
         </div>
         ): (
-        <>
+        <div className="right-col">
         <a href="/">Sign in</a>
-
-      <a href="/" className="register">
-      Sign up
-      </a>
-      </>
+        <a href="/" className="register" >
+            Sign up
+        </a>
+        </div>
     )}
       <div className="menuicon">
       <img src="/menu.png" alt="" onClick={()=> setOpen((prev) => !(prev))} />

@@ -35,8 +35,8 @@ function Navbar(){
         </div>
         ): (
         <div className="right-col">
-        <a href="/">Sign in</a>
-        <a href="/" className="register" >
+        <a href="/login">Sign in</a>
+        <a href="/register" className="register" >
             Sign up
         </a>
         </div>
@@ -51,8 +51,8 @@ function Navbar(){
       <a href="/">About</a>
       <a href="/">Contact</a>
       <a href="/">Agents</a>
-      <a href="/">Sign in</a>
-      <a href="/">Sign out</a>
+      <a href="/login">Sign in</a>
+      <a href="/register">Sign up</a>
 
       </div>
     </div>

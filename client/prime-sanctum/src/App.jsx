@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 import ListPage from "./routes/listPage/listPage.jsx";
-import Layout from "./routes/layout/layout.jsx";
+import {Layout, RequireAuth } from "./routes/layout/layout.jsx";
 import Login from "./routes/login/login.jsx";
 import SinglePage from "./routes/singlePage/singlePage.jsx";
 import ProfilePage from "./routes/profilePage/profilePage.jsx";
@@ -52,11 +52,6 @@ function App() {
         },
 
         {
-          path:"/profile",
-          element:<ProfilePage/>
-        },
-
-        {
           path:"/register",
           element:<Register/>
         },
@@ -66,11 +61,25 @@ function App() {
           element:<NewPostPage/>
         },
 
+      ]
+    },
+    {
+      path:"/",
+      element:<RequireAuth/>,
+      children:[
+
         {
-          path:"update",
+          path:"/profile",
+          element:<ProfilePage/>
+        },
+        
+        {
+          path:"/profile/update",
           element: <ProfileUpdatePage/>
         }
+
       ]
+
     }
    
   ]);

@@ -1,32 +1,36 @@
-import Slider from '../../components/slider/slider'
-import './singlePage.scss'
-import { singlePostData, userData } from '../../lib/dummydata'
-import Map from '../../components/map/map'
+import Slider from '../../components/slider/slider';
+import './singlePage.scss';
+import { singlePostData, userData } from '../../lib/dummydata';
+import Map from '../../components/map/map';
+import { useLoaderData } from 'react-router-dom';
+import DOMPurify from "dompurify";
 
 
 function SinglePage(){
+   const post = useLoaderData();
+   console.log(post)
    return(
     <div className="singlePage">
       <div className="details">
          <div className="wrapper">
-            <Slider images={singlePostData.images}/>
+            <Slider images={post.images}/>
             <div className="info">
                <div className="top">
                   <div className="post">
-                     <h1>{singlePostData.title}</h1>
+                     <h1>{post.title}</h1>
                      <div className="address">
                         <img src="/pin.png" alt="" />
-                        <span>{singlePostData.address}</span>
+                        <span>{post.address}</span>
                      </div>
-                     <div className="price">${singlePostData.price}</div>
+                     <div className="price">${post.price}</div>
                   </div>
                   <div className="user">
-                     <img src={userData.img} alt="" />
-                     <span>{userData.name}</span>
+                     <img src={post.user.avatar} alt="" />
+                     <span>{post.user.username}</span>
                   </div>
                </div>
-               <div className="bottom">
-                  {singlePostData.description}
+               <div className="bottom" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.postDetail.desc)}}>
+                  
                </div>
             </div>
          </div>
@@ -36,80 +40,90 @@ function SinglePage(){
             <p className='title'>General</p>
             <div className="listVertical">
                <div className="feature">
-                  <img src="/utility.png" alt="" srcset="" />
+                  <img src="/utility.png" alt="" srcSet="" />
                   <div className="featureText">
                      <span>Utilities</span>
-                     <p>Rental is responsible</p>
+                     {
+                        post.postDetail.utilities === "owner " ?
+                        <p>Owner is responsible</p>
+                        :
+                        <p>tenant is resposnible</p>
+                     }
                   </div>
                </div>
                <div className="feature">
-                  <img src="/pet.png" alt="" srcset="" />
+                  <img src="/pet.png" alt="" srcSet="" />
                   <div className="featureText">
                      <span>Pet-policy</span>
-                     <p>Pets allowed</p>
+                     {
+                        post.postDetail.pet === "allowed" ?
+                        <p>Pets are allowed</p>
+                        :
+                        <p>pets are not Allowed</p>
+                     }
                   </div>
                </div>
                <div className="feature">
-                  <img src="/fee.png" alt="" srcset="" />
+                  <img src="/fee.png" alt="" srcSet="" />
                   <div className="featureText">
-                     <span>Property fees</span>
-                     <p>Must have 3x the house rent in total household</p>
+                     <span>Income Policy</span>
+                     <p>{post.postDetail.income}</p>
                   </div>
                </div>
             </div>
             <p className='title'>Sizes</p>
             <div className="sizes">
                <div className="size">
-                  <img src="/size.png" alt="" srcset="" />
-                  <span>80 sqft</span>
+                  <img src="/size.png" alt="" srcSet="" />
+                  <span>{post.postDetail.size} sqft</span>
                </div>
                <div className="size">
-                  <img src="/bed.png" alt="" srcset="" />
-                  <span>2 beds</span>
+                  <img src="/bed.png" alt="" srcSet="" />
+                  <span>{post.bedroom} beds</span>
                </div>
                <div className="size">
-                  <img src="/bath.png" alt="" srcset="" />
-                  <span>1 bathroom</span>
+                  <img src="/bath.png" alt="" srcSet="" />
+                  <span>{post.bathroom} bathroom</span>
                </div>
             </div>
 
             <p className='title'>Nearby Places</p>
             <div className="listHorizontal">
                   <div className="feature">
-                  <img src="/school.png" alt="" srcset="" />
+                  <img src="/school.png" alt="" srcSet="" />
                   <div className="featureText">
                      <span>School</span>
-                     <p>250m away</p>
+                     <p>{post.postDetail.school > 999 ? post.postDetail.school/1000 + "km": post.postDetail.school+"m"} away</p>
                   </div>
                   </div>
 
                   <div className="feature">
-                  <img src="/bus.png" alt="" srcset="" />
+                  <img src="/bus.png" alt="" srcSet="" />
                   <div className="featureText">
                      <span>Bus Stop</span>
-                     <p>100m away</p>
+                     <p>{post.postDetail.bus > 999 ? post.postDetail.bus/1000 + "km": post.postDetail.bus+"m"} away</p>
                   </div>
                   </div>
 
                   <div className="feature">
-                  <img src="/bus.png" alt="" srcset="" />
+                  <img src="/bus.png" alt="" srcSet="" />
                   <div className="featureText">
-                     <span>Restaurent</span>
-                     <p>200m away</p>
+                     <span>Restaurant</span>
+                     <p>{post.postDetail.restaurant > 999 ? post.postDetail.restaurant/1000 + "km": post.postDetail.restaurant+"m"} away</p>
                   </div>
                   </div>
 
 
             </div>
             <p className='title'>Location</p>
-            <div className="mapContainer"><Map items={[singlePostData]}/></div>
+            <div className="mapContainer"><Map items={[post]}/></div>
             <div className="buttons">
                <button>
-                  <img src="/chat.png" alt="" srcset="" />
+                  <img src="/chat.png" alt="" srcSet="" />
                   Send a message
                </button>
                <button>
-                  <img src="/save.png" alt="" srcset="" />
+                  <img src="/save.png" alt="" srcSet="" />
                   Save the place
                </button>
             </div>

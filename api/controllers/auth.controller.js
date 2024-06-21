@@ -62,8 +62,11 @@ export const login = async (req,res)=>{
 
 
     const token=jwt.sign({
-        id:user.id
+        id:user.id,
+        isAdmin:false,
     }, process.env.JWT_SECRET_KEY, {expiresIn: age})
+
+    const {password: userPassword,...userInfo}=user
 
     
 
@@ -71,7 +74,7 @@ export const login = async (req,res)=>{
         httpOnly:true,
         // secure:true   //in deployment we uncomment this
         maxAge: age
-    }).status(200).json({message:"Login successful"});
+    }).status(200).json(userInfo);
 
 
     //console.log("Login endpoint")

@@ -54,6 +54,7 @@
         display: flex;
         align-items: center;
         background-color: #faedff;
+        padding-top: 10px;
 
         @include md{
             display: none;

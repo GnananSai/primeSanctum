@@ -1,11 +1,13 @@
 @import '../../responsive.scss';
 .searchBar{
     .type{
+        
 
         button{
             padding: 16px 36px;
             border: 1px solid #999;
             border-bottom: none;
+            text-transform: capitalize;
             cursor: pointer;
 
             &.active{
@@ -74,11 +76,21 @@
             }
         }
 
+
+
+       a{
+        flex: 1;
+        background-color: #f4afea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         button{
             border: none;
             cursor: pointer;
-            background-color: #fece51;
-            flex: 1;
+            background-color: #f4afea;
+        
+           
 
             @include sm{
                 padding: 20px;
@@ -89,6 +101,7 @@
                 height: 24px;   
             }
         }
+       }
         
 
     }

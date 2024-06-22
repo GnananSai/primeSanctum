@@ -18,7 +18,7 @@ import ProfilePage from "./routes/profilePage/profilePage.jsx";
 import Register from "./routes/register/register.jsx";
 import NewPostPage from "./routes/newPostPage/newPostPage.jsx";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage.jsx";
-import { singlePageLoader } from "./lib/loaders.js";
+import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders.js";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -37,6 +37,7 @@ function App() {
         {
           path:"/list",
           element:<ListPage/>,
+          loader: listPageLoader,
           
         },
 
@@ -72,7 +73,8 @@ function App() {
 
         {
           path:"/profile",
-          element:<ProfilePage/>
+          element:<ProfilePage/>,
+          loader:profilePageLoader,
         },
         
         {

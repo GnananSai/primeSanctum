@@ -13,14 +13,14 @@ function Filter(){
         property: searchParams.get("property")||"",
         minPrice: searchParams.get("minPrice")||0,
         maxPrice: searchParams.get("maxPrice")||10000000,
-        bedroom: searchParams.get("bedroom")||1,
+        bedroom: searchParams.get("bedroom")||"",
         
     })
 
     const handleChange= (e)=>{
         setQuery({
             ...query,
-            [e.target.name]:e.target.value
+            [e.target.name]:e.target.value.toLowerCase()
         })
     }
 

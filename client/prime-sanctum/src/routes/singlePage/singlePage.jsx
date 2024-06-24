@@ -15,6 +15,48 @@ function SinglePage(){
    const {currentUser} = useContext(AuthContext)
    const navigate = useNavigate()
 
+   const handleChat= async (e)=>{
+
+      e.preventDefault();
+
+      try{
+          const userId = post.userId
+          
+          if(!currentUser){
+              navigate("/login")
+           }
+
+          if (userId !== currentUser.id) {
+              const chatsRes = await apiRequest.get('/chats');
+              const chats = chatsRes.data;
+  
+              // Check if a chat already exists between the current user and the post owner
+              const existingChat = chats.find(chat =>
+                  chat.userIDs.includes(currentUser.id) && chat.userIDs.includes(userId)
+              );
+  
+              if (existingChat) {
+                  // Navigate to profile page with the existing chat ID
+                  navigate("/profile", { state: { chatId: existingChat.id } });
+              } else {
+                  // Create a new chat
+                  const newChatRes = await apiRequest.post("/chats", {
+                      receiverId: userId
+                  });
+                  const newChat = newChatRes.data;
+  
+                  // Navigate to profile page with the new chat ID
+                  navigate("/profile", { state: { chatId: newChat.id } });
+              }
+          }
+
+      }catch(err){
+          console.log(err);
+
+      }
+      
+  }
+
    const handleSave = async ()=>{
       setSaved((prev)=>!prev);
       if(!currentUser){
@@ -138,7 +180,7 @@ function SinglePage(){
             <p className='title'>Location</p>
             <div className="mapContainer"><Map items={[post]}/></div>
             <div className="buttons">
-               <button>
+               <button onClick={handleChat}>
                   <img src="/chat.png" alt="" srcSet="" />
                   Send a message
                </button>

@@ -1,4 +1,4 @@
-import { Await, Link, useLoaderData, useNavigate } from 'react-router-dom'
+import { Await, Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom'
 import Chat from '../../components/chat/chat'
 import List from '../../components/list/list'
 import apiRequest from '../../lib/apiRequest'
@@ -9,6 +9,8 @@ import { AuthContext } from '../../context/AuthContext'
 
 function ProfilePage(){
     const data= useLoaderData();
+    const location = useLocation();
+    const { chatId } = location.state || {};
 
     const {updateUser,currentUser} = useContext(AuthContext)
     const navigate=useNavigate()
@@ -84,7 +86,7 @@ function ProfilePage(){
                     >
                     {(chatResponse) => 
                        
-                       <Chat chats={chatResponse.data}/>
+                       <Chat chats={chatResponse.data} chatId={chatId}/>
                      
                     }
                     </Await>

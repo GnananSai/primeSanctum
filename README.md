@@ -1,4 +1,8 @@
-# primeSanctum
+# primeSanctum 
+Developed using MongoDB, ExpressJs, ReactJs, NodeJs, Prisma ORM, and Socket.io. This application offers
+extensive filtering options. Users can refine their search by criteria such as price range, number of bedrooms, and
+property type. Implemented advanced security measures including bcryptJs for password hashing and JWT tokens
+for secure authentication.Implemented an inbuilt chat feature that enables real-time communication between buyers/renters.
 
 
 ### Commands to run

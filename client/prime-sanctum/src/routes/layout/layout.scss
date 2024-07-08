@@ -4,6 +4,7 @@
 
 *{
     -ms-overflow-style: none;
+    
 }
 ::-webkit-scrollbar {
     display: none;
@@ -13,27 +14,26 @@
 
 
     height: 100vh;
-    max-width: 1366px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 90px;
+    padding-right: 90px;
     display: flex;
    flex-direction: column;
+   background-color: #606060FF;
 
 
     @include lg{
-        background-color: rgb(240, 181, 226);
         max-width: 1280px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     @include md{
-        background-color: rgb(140, 176, 244);
         max-width: 768px;
     }
 
     @include sm{
-        background-color: rgb(155, 243, 178);
         max-width: 640px;
     }
     .content{

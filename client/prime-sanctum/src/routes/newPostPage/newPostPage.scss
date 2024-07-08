@@ -1,6 +1,7 @@
 .newPostPage {
     height: 100%;
     display: flex;
+    color: #f0ffff;
   
     .formContainer {
       flex: 3;
@@ -20,9 +21,7 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-  
-            label {
-            }
+
   
             input {
               padding: 20px;
@@ -37,10 +36,21 @@
             &.description {
               width: 100%;
               height: 320px;
+              
+              
   
-              .quill > .ql-container > .ql-editor{
-                height: 200px;
-                font-size: 16px;
+              .quill{
+                background-color: white;
+                .ql-container{
+                  background-color: white;
+                  color: black;
+                  .ql-editor{
+                    height: 200px;
+                    font-size: 16px;
+                  }
+                }
+                
+                
               }
             }
           }
@@ -48,7 +58,7 @@
             width: 30%;
             border-radius: 5px;
             border: none;
-            background-color: teal;
+            background-color: rgb(3, 165, 165);
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -59,7 +69,8 @@
   
     .sideContainer {
       flex: 2;
-      background-color: #fcf5f3;
+      margin-top: 5px;
+      background-color: #c8f4c8;
       display: flex;
       flex-direction: column;
       gap: 20px;

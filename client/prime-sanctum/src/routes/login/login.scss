@@ -1,6 +1,7 @@
 .login {
     height: 100%;
     display: flex;
+    color: #F0ffff;
   
     .formContainer {
       flex: 3;
@@ -24,7 +25,7 @@
           padding: 20px;
           border-radius: 5px;
           border: none;
-          background-color: teal;
+          background-color: rgb(3, 165, 165);
           color: white;
           font-weight: bold;
           cursor: pointer;
@@ -41,8 +42,8 @@
   
         a{
           font-size: 14px;
-          color: gray;
-          border-bottom: 1px solid gray;
+          color: rgb(220, 220, 220);
+          border-bottom: 1px solid rgb(174, 173, 173);
           width: max-content;
         }
       }
@@ -50,7 +51,8 @@
   
     .imgContainer {
       flex: 2;
-      background-color: #fcf5f3;
+      margin-top: 5px;
+      background-color: #c8f4c8;
       display: flex;
       align-items: center;
       justify-content: center;

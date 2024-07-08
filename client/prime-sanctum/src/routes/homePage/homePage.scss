@@ -4,6 +4,7 @@
     display: flex;
     .textContainer{
         flex: 3;
+        color: #F0ffff;
         .wrapper{
             padding-right: 100px;
             display: flex;
@@ -49,11 +50,12 @@
         }
     }
     .imageContainer{
+        margin-top: 5px;
         flex: 2;
         position: relative;
         display: flex;
         align-items: center;
-        background-color: #faedff;
+        background-color: #c8f4c8;
         padding-top: 10px;
 
         @include md{
@@ -65,7 +67,7 @@
         }
 
         img{
-            width:115% ;
+            width:110% ;
             position: absolute;
             right: 0;
         }

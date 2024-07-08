@@ -6,6 +6,7 @@ import Map from '../../components/map/map';
 import { listData } from '../../lib/dummydata'
 import './listPage.scss'
 import { Suspense } from 'react';
+import LoadingSpinner from '../../components/loading/loading';
 
 
 function ListPage(){
@@ -35,7 +36,7 @@ function ListPage(){
         </div>
     </div>
     <div className="mapContainer">
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<LoadingSpinner/>}>
            <Await
           resolve={data.postResponse}
           errorElement={

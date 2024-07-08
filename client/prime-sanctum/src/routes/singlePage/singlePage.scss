@@ -14,6 +14,7 @@
    .details{
     flex: 3;
     height: 100%;
+    color: #F0ffff;
     overflow-y: scroll;
 
     @include md{
@@ -47,7 +48,6 @@
                         display: flex;
                         gap: 5px;
                         align-items: center;
-                        color: #888;
                         font-size: 14px;
 
                         img{
@@ -59,7 +59,8 @@
 
                     .price{
                         padding: 5px;
-                        background-color: #efd1e3;
+                        background-color: #c8f4c8;
+                        color: black;
                         border-radius: 5px;
                         width: max-content;
                         font-size: 20px;
@@ -76,7 +77,8 @@
                     gap: 20px;
                     padding: 0px 50px;
                     border-radius: 10px;
-                    background-color: #f0b8e2;
+                    background-color: #c8f4c8;
+                    color: black;
                     font-weight: 600;
 
                     img{
@@ -91,7 +93,6 @@
             }
             .bottom{
                 margin-top: 50px;
-                color: #555;
                 line-height: 20px;
 
             }
@@ -101,8 +102,9 @@
    }
 
    .features{
+        margin-top: 5px;
       flex: 2;
-      background: #fcf5f3;
+      background: #c8f4c8;
       height: 100%;
       overflow-y: scroll;
 
@@ -128,6 +130,7 @@
         }
 
         .title{
+            margin-top: 10px;
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 10px;

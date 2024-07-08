@@ -4,6 +4,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #F0ffff;
 
     a{
         transition: all 0.4s ease;
@@ -53,7 +54,8 @@ nav{
        display: flex;
        align-items: center;
        justify-content: flex-end;
-       background-color: #faedff;
+       color: #606060FF;
+       background-color: #c8f4c8;
        height: 100%;
 
        @include md{
@@ -74,7 +76,10 @@ nav{
        }
 
        .register{
-        background-color: #fece51;
+        background-color: rgb(3, 165, 165);
+        color: #F0ffff;
+        border-radius: 5px;
+        border: none;
         text-align: center;
         }
 
@@ -99,8 +104,10 @@ nav{
 
         .profile{
             padding: 12px 24px;
-            background-color: #efa4de;
+            background-color: rgb(3, 165, 165);
+            color: #F0ffff;
             cursor: pointer;
+            border-radius: 5px;
             border: none;
             position: relative;
 

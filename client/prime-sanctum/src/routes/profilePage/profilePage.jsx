@@ -5,6 +5,7 @@ import apiRequest from '../../lib/apiRequest'
 import './profilePage.scss'
 import { Suspense, useContext} from 'react'
 import { AuthContext } from '../../context/AuthContext'
+import LoadingSpinner from '../../components/loading/loading'
 
 
 function ProfilePage(){
@@ -49,7 +50,7 @@ function ProfilePage(){
                     <button>Create New Post</button>
                     </Link>
                 </div>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<LoadingSpinner/>}>
                     <Await
                         resolve={data.postResponse}
                         errorElement={
@@ -63,7 +64,7 @@ function ProfilePage(){
                 <div className="title">
                     <h1>Saved List</h1>
                 </div>
-                <Suspense fallback={<p>Loading...</p>}>
+                <Suspense fallback={<LoadingSpinner/>}>
                     <Await
                         resolve={data.postResponse}
                         errorElement={
@@ -77,7 +78,7 @@ function ProfilePage(){
         </div>
         <div className="chatContainer">
             <div className="wrapper">
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<LoadingSpinner/>}>
                     <Await
                         resolve={data.chatResponse}
                         errorElement={

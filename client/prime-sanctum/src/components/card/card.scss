@@ -35,7 +35,7 @@
         .title{
             font-size: 20px;
             font-weight: 600;
-            color: #444;
+            color: #F0ffff;
             transition: all 0.4s ease;
 
             &:hover{
@@ -51,7 +51,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            color: #888;
+            color: rgb(220, 220, 220);
         }
 
         .price{
@@ -59,7 +59,7 @@
             font-weight: 300;
             padding: 5px;
             border-radius: 5px;
-            background-color: #97ec92;
+            background-color: #c8f4c8;
             width: max-content;
         }
 

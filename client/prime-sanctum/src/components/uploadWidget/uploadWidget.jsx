@@ -54,6 +54,7 @@ function UploadWidget({ uwConfig, setPublicId, setState }) {
         id="upload_widget"
         className="cloudinary-button"
         onClick={initializeCloudinaryWidget}
+        style={{backgroundColor:'rgb(3, 165, 165)',border:'none',color:'#f0ffff',fontWeight:'bold'}}
       >
         Upload
       </button>

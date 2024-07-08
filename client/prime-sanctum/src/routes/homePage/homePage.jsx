@@ -16,8 +16,7 @@ function HomePage(){
 
              </h1>
              <p>
-                fg;j;p fgjer;oglji;oijo;fsadhflsdhjvbdfj
-                lhbrtrbssdfklfhdskjvghdfkgjfdbkldjkfbjf
+             Discover Your Dream Home: Safe, Instant, and Tailored Just for You
              </p>
              <SearchBar/>
              <div className="boxes">

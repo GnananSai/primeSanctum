@@ -22,3 +22,10 @@ npx prisma db push
 
 console-ninja node --env-file .env --watch app.js
 
+Colors -
+Primary-606060FF
+Secondary-c8f4c8
+Text - F0ffff
+Buttons - rgb(3, 165, 165)
+Light Text - rgb(220, 220, 220)
+
